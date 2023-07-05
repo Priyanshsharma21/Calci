@@ -1,0 +1,187 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.app {
+  background: url("../src/assets/haikyuu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator_box {
+  width: 500px;
+  height: 700px;
+
+  border-radius: 3rem;
+  box-shadow: 0px 0px 40px 10px rgba(255, 255, 255, 0.349);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+
+  flex-direction: column;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.529);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  /* border: 2px solid rgba(255, 255, 255, 0.456); */
+  /* border: 2px solid white; */
+}
+
+.show_res_box {
+  width: 100%;
+
+  height: 270px;
+  border-radius: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 5rem;
+
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.calculator_btns {
+  margin-top: 1rem;
+}
+
+.addsub,
+.multidiv {
+  display: flex;
+}
+
+.btns_main {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  margin: 2rem;
+  cursor: pointer;
+}
+
+.btns_main:hover {
+  transform: scale(1.09);
+}
+
+.btns_main:active {
+  transform: scale(0.91);
+}
+
+.icons {
+  font-size: 2rem;
+}
+
+.inputs {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  display: flex;
+}
+
+.main_inp {
+  width: 100%;
+  height: 30px;
+  border-radius: 1rem;
+  outline: none;
+  padding: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+
+  border: none;
+  font-size: 2rem;
+  color: white;
+
+  margin: 1rem;
+}
+
+
+
+.clear_hai{
+  width: 100%;
+  height: 40px;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+
+  padding: 2rem;
+
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.clear_hai:hover{
+  transform : scale(1.09);
+  border: 2px solid white;
+}
+
+.clear_hai:active{
+  transform : scale(0.90)
+}
+
+
+
+@media (max-width: 766px) {
+  .clear_hai{
+    width: auto;
+
+  }
+  .btns_main{
+    width: max-content;
+    height: max-content;
+  }
+
+  .calculator_box{
+    width: auto;
+  }
+  
+}
