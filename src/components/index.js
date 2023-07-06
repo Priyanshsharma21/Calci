@@ -1,5 +1,1 @@
-export { default as Anime1 } from './Anime1'
-export { default as Anime2 } from './Anime2'
-export { default as Anime3 } from './Anime3'
-export { default as Anime4 } from './Anime4'
-export { default as Anime5 } from './Anime5'
+export { default as StudentForm } from './StudentForm.jsx'
