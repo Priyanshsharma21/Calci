@@ -12,21 +12,9 @@
 }
 
 .app {
-  /* From https://css.glass */
-background: rgba(255, 255, 255, 0.1);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(10.5px);
--webkit-backdrop-filter: blur(10.5px);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: rgb(0, 0, 0);
   width: 100%;
   min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .calculator_box {
@@ -140,9 +128,7 @@ backdrop-filter: blur(10.5px);
   margin: 1rem;
 }
 
-
-
-.clear_hai{
+.clear_hai {
   width: 100%;
   height: 40px;
   font-size: 2rem;
@@ -164,69 +150,52 @@ backdrop-filter: blur(10.5px);
   transition: all 0.3s linear;
 }
 
-.clear_hai:hover{
-  transform : scale(1.09);
+.clear_hai:hover {
+  transform: scale(1.09);
   border: 2px solid white;
 }
 
-.clear_hai:active{
-  transform : scale(0.90)
+.clear_hai:active {
+  transform: scale(0.9);
 }
 
-
-
 @media (max-width: 766px) {
-  .clear_hai{
+  .clear_hai {
     width: auto;
-
   }
-  .btns_main{
+  .btns_main {
     width: max-content;
     height: max-content;
   }
 
-  .calculator_box{
+  .calculator_box {
     width: auto;
   }
-  
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.student_form{
+.student_form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
 
-.form_main{
+.form_main {
   margin-top: 1rem;
 }
 
-
-.form_student{
+.form_student {
   display: flex;
   flex-direction: column;
 }
-
 
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
   text-align: center;
   border: 1px solid #ccc;
@@ -240,6 +209,234 @@ tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
-.table{
+.table {
   margin-top: 2rem;
+}
+
+.table_of_that_number {
+  margin-top: 2rem;
+}
+
+/* sasta thread css */
+
+.sasta_thread {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 1rem; */
+}
+
+.logo,
+.createDhagaBtn {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.create_dhaga {
+  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.main_wrapper {
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+
+.dhaga_post{
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+
+@media (max-width: 991px) {
+  .main_wrapper {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .dhaga_post{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+
+.create_thread {
+  margin-top: 3rem;
+  width: 100%;
+  height: 100%;
+}
+
+
+.dhagaInput{
+  background: rgba(0, 0, 0, 0);
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.7rem;
+  padding-right: 0.7rem;
+  outline: none;
+  border: 0.1px solid white;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  width: 100%;
+
+  margin-top: 1rem;
+}
+
+.submit_dhaga{
+  width: 100%;
+  height: max-content;
+  padding: 1rem;
+  background-color:rgba(255, 255, 255, 0);
+  transition: all 0.4s linear;
+  border-radius: 0.2rem;
+  margin-top: 2.5rem;
+
+  color: white;
+  outline: none;
+
+  font-size: 1.2rem;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.submit_dhaga:hover{
+  background-color:rgb(255, 255, 255);
+  color: black;
+}
+
+.submit_dhaga:active{
+  transform: scale(0.91);
+}
+
+
+.btn_ai{
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+
+.ai_image_btn{
+  width: 100%;
+  height: max-content;
+  padding: 1rem;
+  background-color:rgba(255, 255, 255, 0);
+  transition: all 0.4s linear;
+  border-radius: 0.2rem;
+  margin-top: 2rem;
+
+  color: rgb(255, 255, 255);
+  outline: none;
+
+  font-size: 1.2rem;
+  border: 1px solid rgb(0, 255, 179);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ai_image_btn:hover{
+  background-color:rgb(0, 255, 136);
+  color: rgb(67, 67, 67);
+}
+
+.ai_image_btn:active{
+  transform: scale(0.91);
+}
+
+
+
+.no_post_message{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.message_no_post{
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: rgba(240, 248, 255, 0.864);
+}
+
+.create_a_dhaga{
+  margin-top: 1rem;
+}
+
+.dcreate_home{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(240, 248, 255, 0.766);
+  margin-top: 2rem;
+  transition: all 0.2s linear;
+  text-decoration: none;
+}
+
+.dcreate_home:hover{
+  color: white;
+  cursor: pointer;
+}
+
+.thread_card{
+  /* display: flex; */
+}
+
+.thread{
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  max-width: 800px;
+  /* word-spacing: 1rem; */
+  line-height: 1.5rem;
+  margin-top: 2rem;
+}
+
+.edit_dots_box{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.edit_dots{
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.dhaga_post{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid white;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+
+.image_of_thread{
+  width: 200px;
+  height: 300px;
+
+  margin-top: 1rem;
+}
+
+.dhaga_photo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

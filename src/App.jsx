@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import { StudentForm } from './components'
-
+import { CreateDhaga, Home, Navbar, StudentForm,Table } from './components'
+import EditDhaga from './components/crudapp/EditDhaga';
 
 const App = () => {
-    
+
+
   return (
     <div className="app">
-      <StudentForm />
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dcreate" element={<CreateDhaga />}/>
+          <Route path="/edit/:id" element={<EditDhaga />}/>
+        </Routes>
     </div>
   );
 };
