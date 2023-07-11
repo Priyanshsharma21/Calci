@@ -1,14 +1,18 @@
-import { createContext, useContext, useEffect, useReducer, useState } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 import dhagaReducer from '../reducer/reducer';
 
 const DhagaContext = createContext();
 
 export const DhagaProvider = ({ children }) => {
   const initialState = {
-    dhagas: [], // Initial state for dhagas
+    dhagas: JSON.parse(localStorage.getItem('dhagas')) || [],
   };
 
   const [state, dispatch] = useReducer(dhagaReducer, initialState)
+
+  useEffect(() => {
+    localStorage.setItem('dhagas', JSON.stringify(state.dhagas));
+  }, [state.dhagas]);
 
 
   return (

@@ -2,19 +2,15 @@ import React from 'react'
 import SectionWrapper from '../../hof/hof'
 import { BsThreeDots } from 'react-icons/bs'
 import { AiOutlineDelete } from 'react-icons/ai'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useDhagaContext } from '../../context/dhagaContext'
 
 
 const DhagaCard = ({post}) => {
-
+  const { dispatch } = useDhagaContext();
 
   const handleDelete = (id)=>{
-
-    console.log(id)
-    const storedThreads = JSON.parse(localStorage.getItem('threads'))
-    const updatedThreads = storedThreads.filter((item) => item.id !== id);
-    localStorage.setItem('threads', JSON.stringify(updatedThreads))
-
+    dispatch({ type: 'DELETE_DHAGA', payload: id });
     window.location.reload();
   }
 

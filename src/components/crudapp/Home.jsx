@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import DhagaCard from './DhagaCard.jsx'
+import { useDhagaContext } from '../../context/dhagaContext.jsx'
 
 
 const Home = () => {
-  const storedThreads = JSON.parse(localStorage.getItem('threads'))
+  const { state } = useDhagaContext()
 
-
+  
   return (
     <>
         <div className="show_posts">
-          {storedThreads === null ? (
+          {state.dhagas.length === 0 ? (
             <div className="no_post_message">
               <div className="message_no_post">
                 No Post Yet.
@@ -25,7 +26,7 @@ const Home = () => {
           ):(
             <>
                 <div className="thread_card">
-                    {storedThreads?.map((post,i)=>(
+                    {state?.dhagas?.map((post,i)=>(
                         <DhagaCard key={post?.id}  post={post}/>
                     ))}
                 </div>

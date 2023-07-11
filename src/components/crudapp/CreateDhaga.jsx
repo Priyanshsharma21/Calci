@@ -20,10 +20,6 @@ const CreateDhaga = () => {
         e.preventDefault()
         const newThread = { ...form, id : uuidv4() }
         dispatch({ type: 'CREATE_DHAGA', payload: newThread });
-        const storedThreads = JSON.parse(localStorage.getItem('threads')) || []
-        storedThreads.push(newThread);
-        localStorage.setItem('threads', JSON.stringify(storedThreads));
-
         navigate('/')
     }
     

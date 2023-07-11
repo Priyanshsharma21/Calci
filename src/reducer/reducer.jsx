@@ -3,26 +3,38 @@
 const dhagaReducer = (state, action) => {
     switch (action.type) {
       case 'CREATE_DHAGA':
-        // Logic to create a new dhaga
+        const createdDhaga = action.payload;
+        const createdDhagas = [...state.dhagas, createdDhaga];
+        localStorage.setItem('dhagas', JSON.stringify(createdDhagas));
         return {
-          ...state,
-          // Update the state with the new dhaga
+        ...state,
+        dhagas: createdDhagas,
         };
   
+
+
       case 'UPDATE_DHAGA':
-        // Logic to update an existing dhaga
+       const updatedDhaga = action.payload;
+        const updatedDhagas = state.dhagas.map((dhaga) =>
+            dhaga.id === updatedDhaga.id ? updatedDhaga : dhaga
+        );
+        localStorage.setItem('dhagas', JSON.stringify(updatedDhagas));
         return {
-          ...state,
-          // Update the state with the updated dhaga
+         ...state,
+         dhagas: updatedDhagas,
         };
   
       case 'DELETE_DHAGA':
-        // Logic to delete a dhaga
+        const deletedDhagaId = action.payload;
+        const filteredDhagas = state.dhagas.filter(
+          (dhaga) => dhaga.id !== deletedDhagaId
+        );
+        localStorage.setItem('dhagas', JSON.stringify(filteredDhagas));
         return {
           ...state,
-          // Update the state by removing the deleted dhaga
+          dhagas: filteredDhagas,
         };
-  
+        
       default:
         return state;
     }

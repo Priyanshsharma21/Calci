@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
-
 import SectionWrapper from '../../hof/hof';
+import { useDhagaContext } from '../../context/dhagaContext';
 
 const EditDhaga = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const { state, dispatch } = useDhagaContext();
 
   const [form, setForm] = useState({
     dhaga: '',
@@ -14,27 +14,16 @@ const EditDhaga = () => {
   });
 
   useEffect(() => {
-    const storedThreads = JSON.parse(localStorage.getItem('threads')) || [];
-    const foundPost = storedThreads.find((item) => item.id === id);
 
-    setForm({
-      dhaga: foundPost ? foundPost.dhaga : '',
-      photo: foundPost ? foundPost.photo : '',
-    });
-  }, [id]);
+    const foundDhaga = state.dhagas.find((dhaga) => dhaga.id === id);
+    if (foundDhaga) {
+      setForm({ ...foundDhaga });
+    }
+  }, [id, state.dhagas]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newThread = { ...form, id: id };
-    const storedThreads = JSON.parse(localStorage.getItem('threads')) || [];
-    const updatedThreads = storedThreads.map((thread) => {
-      if (thread.id === id) {
-        return newThread;
-      }
-      return thread;
-    });
-    localStorage.setItem('threads', JSON.stringify(updatedThreads));
-  
+    dispatch({ type: 'UPDATE_DHAGA', payload: { ...form, id } });
     navigate('/');
   }
 
